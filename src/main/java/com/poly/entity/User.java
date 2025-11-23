@@ -37,4 +37,14 @@ public class User {
     public void setEmail(String email) { this.email = email; }
     public boolean isAdmin() { return admin; }
     public void setAdmin(boolean admin) { this.admin = admin; }
+    @jakarta.persistence.OneToMany(mappedBy = "user")
+    private java.util.List<Favorite> favorites;
+
+    public java.util.List<Favorite> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(java.util.List<Favorite> favorites) {
+        this.favorites = favorites;
+    }
 }
